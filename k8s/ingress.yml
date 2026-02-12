@@ -4,16 +4,7 @@ kind: Ingress
 metadata:
   # Name used to identify this ingress resource
   name: voice-frontend
-  annotations:
-    # Use cert-manager to automatically provision a TLS certificate
-    cert-manager.io/cluster-issuer: letsencrypt
 spec:
-  # TLS configuration for HTTPS
-  tls:
-    - hosts:
-        - workshop.foundersandcoders.com
-      # Secret where cert-manager will store the TLS certificate
-      secretName: voice-frontend-tls
   rules:
     # Route traffic for this hostname - replace with your actual domain
     - host: workshop.foundersandcoders.com
